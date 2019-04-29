@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% extends 'SidApp/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container" >
+<div class="col-sm-12 col-md-8 col-xs-12" >
+  <h2>Search Consumer Data</h2>
+  <form  method="post" novalidate action="/search/">
+    {% csrf_token %}
+    <div class="form-group">
+      <div class="col-mg-5">
+        <input type="text" name="srh" class="form-control" placeholder="Enter Consumer Mobile Number" value="">
+      </div>
+    </div>
+      <!--error messages    -->
+      <div class="">
+        {% if messages %}
+            <ul class="messages">
+              {% for k in messages %}
+              <li style="color:red"> {{ k }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+      </div>
+    <button type="submit" class="btn btn-success btn-lg">Search</button>
+  </form>
+<br><br>
+
+
+
+
+
+
+<!--found data will write from this code  -->
+  <div class="">
+
+    {%for list in banner %}
+    <span id="dynamic">{{list}}</span>
+    <!-- <br> -->
+    <hr id="hor">
+    {%endfor%}
+
+    {% if sr %}
+        {% for k in sr %}
+        <table id="tab">
+          <tr>
+            <td>Name:</td>
+            <td>{{k.Customer_Name}}</td>
+          </tr>
+          <tr id="tab1">
+            <td>Mobile Number:</td>
+            <td>{{k.Mobile_Number}}</td>
+          </tr>
+          <tr>
+            <td>Registration No:</td>
+            <td>{{k.Reg_No}}</td>
+          </tr>
+          <tr>
+            <td>Enginer No:</td>
+            <td>{{k.Engine_Numer}}</td>
+          </tr>
+          <tr>
+            <td>Bike Model:</td>
+            <td>{{k.Bike_Model}}</td>
+          </tr>
+          <tr>
+            <td>Color:</td>
+            <td>{{k.Color}}</td>
+          </tr>
+          <tr>
+            <td>Remarks:</td>
+            <td>{{k.Remarks}}</td>
+          </tr>
+          <tr>
+            <td>Valid From:</td>
+            <td>{{k.Valid_From}}</td>
+          </tr>
+          <tr>
+            <td>Valid To:</td>
+            <td>{{k.Valid_To}} </td>
+          </tr>
+        </table>
+        <br><br><br>
+        <hr id="hor">
+        <br>
+        {% endfor %}
+        <a id="butt1" href="/pdf?phn={{phn}}">Print</a>
+
+      {% endif %}
+
+  </div>
+  <br><br>
+
+
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript" src="{% static "js/sid.js"%}"></script>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

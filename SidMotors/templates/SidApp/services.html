@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'SidApp/base.html'%}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+
+<div class="container" >
+<div class="col-sm-12 col-md-6 col-xs-12" >
+  <form  method="post" novalidate>
+    <h2>Fill The Form To Save Consumer Data</h2>
+    {% csrf_token %}
+    {{Form|crispy}}
+    <button type="submit" class="btn btn-success btn-lg">Save</button>
+
+  </form>
+</div>
+<!-- <div class="col-sm-12 col-md-6 col-xs-12">
+
+  <h1>somethin</h1>
+</div> -->
+</div>
+
+
+<!--script for date picker  for Valid_From -->
+<script>
+      $(function () {
+        $("#id_Valid_From").datepicker({uiLibrary: 'bootstrap'});
+      })
+</script>
+
+<!--script for same date picker for valid_to  -->
+<script>
+      $(function () {
+        $("#id_Valid_To").datepicker({uiLibrary: 'bootstrap'});
+      })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

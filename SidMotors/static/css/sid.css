@@ -1,0 +1,158 @@
+/* setting background color gray for all pages */
+.bd{
+  background:#e6eaef;
+}
+#brand{
+  padding-bottom: 5px;
+  padding-top: 10px;
+  margin-left: 35px;
+}
+#nav1{
+  /* background: */
+  font-size: 20px;
+  shape-outside: none;
+  background-image: radial-gradient( circle farthest-corner at -0.1% 100.8%,
+  rgba(0,234,255,1) 0.2%, rgba(0,124,255,1) 59.1%, rgba(198,0,255,1) 100.2% );
+  font-family: 'IM Fell English SC', serif;
+  padding-top: 0px;
+  margin-bottom: 5px;
+}
+
+#menu li a:hover{
+  border: 1px solid black;
+  /* border-top: none; */
+  border-right: none;
+  border-left: none;
+  color:black;
+  font-weight:bold;
+}
+#menu li a{
+  color:white;
+  margin-left: 30px;
+  transition-duration:
+}
+
+ /*this html overflow will make the page fit i.e page will not moves to right or left... */
+ html {
+   overflow-x: hidden;
+ }
+
+#content{
+margin-top: 0px;
+
+}
+.well{
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 0px;
+  margin-left: 2px;
+  font-family: 'Quattrocento', serif;
+  color:black;
+  font-size: 18px;
+  margin-top: 0px;
+
+}
+.well span{
+  font-weight: bold;
+  color:orange;
+  border-bottom: 1px solid black
+}
+.well ul {
+  list-style-type:none;
+  }
+.well h2{
+  color:blue;
+  font-family: 'Quattrocento', serif;
+  margin-bottom: 20px;
+
+}
+#Formdiv{
+  margin-top: 50px;
+  width: 40px;
+}
+#Formdiv input{
+  width: 500px;
+  }
+.well a{
+  margin-left: 45px;
+}
+#butt{
+  width:340px;
+  background-color:#0fad2c;
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  padding-left: 95px;
+  padding-right: 95px;
+  margin-top: 10px;
+}
+#butt a{
+  color:white;
+  margin-right: 60px;
+  padding-top: 5px;
+  style-type:none;
+  }
+  #butt1{
+    width:340px;
+    background-color:blue;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    padding-left: 95px;
+    padding-right: 95px;
+    margin-top: 10px;
+  }
+
+.container{
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+.container h2{
+  color:blue;
+
+}
+#login{
+  margin-left:40px;
+  /* width: 40px; */
+}
+#login input{
+  width: 300px;
+}
+#tab{
+  font-size: 18px;
+  color:orange;
+
+}
+
+#tab1{
+  /* color:orange; */
+}
+#hor{
+  border: 1px solid red;
+}
+#dynamic{
+  color:black;
+  font-size: 18px;
+  font-family: 'Quattrocento', serif;
+
+}
+.headingpdf{
+  font-size: 25px;
+  color:orange;
+}
+.contact{
+  background-image: url(https://www.jyotirubber.com/wp-content/uploads/contactus-background-right.jpg);
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3%;
+
+}
+.contact .col-md-4{
+  font-family: 'Quattrocento', serif;
+  margin-top: 30px;
+  
+}
+.contact h1{
+  color:blue;
+}

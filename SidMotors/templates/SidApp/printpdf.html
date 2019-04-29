@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http//www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script> -->
+<title>Slip_PDF</title>
+  </head>
+  <body>
+    <!--jinja code starts here -->
+    {% block content %}
+    <!--myvar is passing from view function which is context-->
+    {% for list in myvar %}
+    <span id="dynamic">{{list}}</span>
+    {%endfor%}
+    <hr id="hor">
+    <!--jinja code for passing the data from model data which is rendered in html   -->
+    <!--here sr is key passed in view function   -->
+    {% for k in sr %}
+    <table id="tab">
+      <tr>
+        <td>Name:</td>
+        <td>{{k.Customer_Name}}</td>
+      </tr>
+      <tr id="tab1">
+        <td>Mobile Number:</td>
+        <td>{{k.Mobile_Number}}</td>
+      </tr>
+      <tr>
+        <td>Registration No:</td>
+        <td>{{k.Reg_No}}</td>
+      </tr>
+      <tr>
+        <td>Enginer No:</td>
+        <td>{{k.Engine_Numer}}</td>
+      </tr>
+      <tr>
+        <td>Bike Model:</td>
+        <td>{{k.Bike_Model}}</td>
+      </tr>
+      <tr>
+        <td>Color:</td>
+        <td>{{k.Color}}</td>
+      </tr>
+      <tr>
+        <td>Remarks:</td>
+        <td>{{k.Remarks}}</td>
+      </tr>
+      <tr>
+        <td>Valid From:</td>
+        <td>{{k.Valid_From}}</td>
+      </tr>
+      <tr>
+        <td>Valid To:</td>
+        <td>{{k.Valid_To}} </td>
+      </tr>
+    </table>
+    <br><br><br>
+    <hr id="hor">
+    {% endfor %}
+
+<!-- <a href="/pdf">print the page</a> -->
+{% endblock %}
+
+  </body>

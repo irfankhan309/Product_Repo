@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{%load staticfiles %}
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}    {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!--gijgo  -->
+    <link rel="stylesheet" href="{% static "main/gijgo.min.css" %}">
+
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/sid.css" %}">
+    <link rel="shortcut icon" href="https://www.mcgarveyscleaning.com/wp-content/uploads/2016/06/letter-s.png" type="image/x-icon"/>
+    <!--font awesome  -->
+    <link rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+  </head>
+  <body class="bd">
+<!--navbar starts here  -->
+    <nav id="nav1" class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a  id="brand" class="navbar-brand" href="/home"><img src="{% static "images/brnd.png" %}" alt=""></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul id="menu" class="nav navbar-nav">
+            <li><a href="/home"><i class="fas fa-home"> Home</i> <span class="sr-only"></span></a></li>
+            <!-- <li><a href="/search"><i class="fas fa-tool"><i class="fas fa-search"></i> Search</i></a></li> -->
+            <li><a href="/contact"><i class="fas fa-phone fa-rotate-90"></i> Contact</a></li>
+            <li><a href="https://www.acko.com/articles/traffic-rules-violations/hyderabad/"><i class="fas fa-pen-fancy"></i> RTA Rules & Violations</a></li>
+            <li><a href="http://transport.telangana.gov.in/"><i class="fab fa-fort-awesome"></i> Telangana RTA</a></li>
+            <!-- logic for if user login then need to display only logout optiono if not login option -->
+            {% if user.is_authenticated %}
+            <li><a href="/services"><i class="fas fa-tools"> Services</i></a></li>
+            <li><a href="/search"><i class="fas fa-tool"><i class="fas fa-search"></i> Search</i></a></li>
+              <li><a  href="/accounts/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            {% else %}
+              <li><a href="/accounts/login"><i class="far fa-user"></i> Login</a></li>
+            {% endif %}
+
+
+
+            </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+      {% block content%}
+
+      {%endblock%}
+    <script type="text/javascript" src="{% static "js/sid.js" %}"></script>
+    <script type="text/javascript" src="{% static "main/gijgo.min.js" %}"></script>
+
+  </body>
+</html>
